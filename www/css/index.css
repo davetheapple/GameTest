@@ -1,0 +1,208 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#dbedf7;
+
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    /*width:40%; /* 40% landscape, 30% portrait */
+    margin: 0 auto;
+}
+
+/* Portrait layout (default) */
+.app {
+
+	width: 100%;
+	height: 100%;
+	
+    /*position:absolute;             /* position in the center of the screen */
+    /*left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    /*width:225px;                   /* text area width */
+    /*text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    /*margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        /*background-position:left center;
+        /*padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+       /* margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+/* MINE */
+
+#topbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background: #343030;
+	z-index: 1;
+	box-shadow: 0px 0px 4px #000, inset 0 -40px 100px 15px #000;
+	padding: 5px;
+}
+
+#search {
+	width: 100%;
+	height: 100%;
+	margin: 5px auto;
+	text-align: center;
+}
+
+#search > img {
+	position: relative;
+	height: 30px;
+	/*margin-top: 1.2em;*/
+	vertical-align: middle;
+	z-index: 1;
+	margin: 5px;
+	margin-top: -4px;
+	
+}
+
+input[name='query'] {
+	position: relative;
+	width: 80%;
+	height: 30px;
+	font-size: 12pt;
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 5px;
+	border: solid thin white;
+	opacity: .9;
+	z-index: 0;
+	border: solid 0 #5f84a7;
+	transition: opacity 1s;
+	-webkit-transition: opacity 1s;
+}
+
+input[name='query']:active {
+	opacity: .5;
+}
+
+#content {
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 60px;
+	text-align: center;
+}
+
+.cell {
+	position: relative;
+	z-index: 0;
+	background: #111010;
+	background-size: 100%;
+	background-position-y: -150px;
+	height: 0;
+	opacity: 0;
+	color: rgba(255,255,255,0.76);
+	border-radius: 2px;
+	border-bottom: solid thin white;
+	box-shadow: 0px 0px 50px 5px #26292b inset;
+	text-align: left;
+	margin: 0 auto;
+	width: 100%;
+	transition: height 1s, opacity 2s;
+	-webkit-transition: height 1s, opacity 2s;
+}
+
+.cell > * {
+	padding: .5em;
+}
+
+#header {
+	width: 100%;
+	height: 12em;
+	margin-top: -1.5em;
+	padding-top: 2em;
+	color: white;
+	background-size: cover;
+	background-position-y: -200px;
+}
+
+#header > h2 {
+	font-size: 26pt;
+	opacity: .7;
+}
+
+
+.m-scene .scene_element {
+  animation-duration: 0.25s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+
+.m-scene .scene_element--fadein {
+  animation-name: fadeIn;
+}
+
+.m-scene.is-exiting .scene_element {
+  animation-direction: alternate-reverse;
+}
+
+/*
+ * Keyframes
+ */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+
+
+
+
+
