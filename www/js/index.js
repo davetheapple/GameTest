@@ -42,33 +42,5 @@ var app = {
 };
 
 $(document).ready(function() {
-	 var w = document.body.clientWidth;
-				var h = document.body.clientHeight;
-				// You can use either PIXI.WebGLRenderer or PIXI.CanvasRenderer
-			    var renderer = new PIXI.WebGLRenderer(w, h);
-			
-			    $('#app').append(renderer.view);
-			
-			    var stage = new PIXI.Container();
-			
-			    var bunnyTexture = PIXI.Texture.fromImage("bunny.png");
-			    var bunny = new PIXI.Sprite(bunnyTexture);
-			
-			    bunny.position.x = w/2;
-			    bunny.position.y = -h;
-			
-			    bunny.scale.x = .3;
-			    bunny.scale.y = .3;
-			
-			    stage.addChild(bunny);
-			
-			    requestAnimationFrame(animate);
-			
-			    function animate() {
-			        bunny.rotation += 0.01;
-			
-			        renderer.render(stage);
-			
-			        requestAnimationFrame(animate);
-			    }
+	 
 });
